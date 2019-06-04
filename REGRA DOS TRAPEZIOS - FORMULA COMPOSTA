@@ -1,0 +1,15 @@
+%IFPB 04/06/2019
+% REGRA DOS TRAPEZIOS - FORMULA COMPOSTA
+% EXEMPLO 5.2
+
+clear all, close all, clc, help trapezios.m
+
+N=6; Li=3.0; Ls=3.6; h=(Ls-Li)/N;
+x=Li:h:Ls; y=1./x; I=0;
+
+disp('DIVISAO DE SUBINTERVALOS')
+for i= 1:N
+     A = [i,i+1]; disp (num2str(A));
+     I=I+(h/2)*(y(i)+y(i+1));
+end 
+disp (' '); disp(['A integral vale:' num2str(I)]);
