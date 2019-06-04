@@ -1,0 +1,16 @@
+%IFPB 04/06/2019
+% PRIMEIRA REGRA DE SIMPSON - FORMULA COMPOSTA
+% EXEMPLO 5.5
+
+clear all, close all, clc, help trapezios.m
+
+N=10; Li=2.0; Ls=4.0; h=(Ls-Li)/N;
+x=Li:h:Ls; y=(log10(x)+x.^2)./(x+3).^2; I=0; z=0;
+
+disp('DIVISAO DE SUBINTERVALOS')
+for i= 1:N/2
+     A = [i,z,i+1+z,i+2+z]; disp (num2str(A));
+     I=I+(h/3)*(y(i+z)+4*y(i+1+z)+y(i+2+z));
+     z=z+1;
+end 
+disp (' '); disp(['A integral vale:' num2str(I)]);
